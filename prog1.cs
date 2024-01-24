@@ -8,35 +8,18 @@ namespace Arrays_problems
 {
     internal class Program
     {
-        static void CountOccurrences(int[] arr, int len)
-        {
-            Dictionary<int, int> elementCount = new Dictionary<int, int>();
-
-            for (int i = 0; i < len; i++)
-            {
-                if (elementCount.ContainsKey(arr[i]))
-                {
-                    elementCount[arr[i]]++;
-                }
-                else
-                {
-                    elementCount.Add(arr[i], 1);
-                }
-
-
-            }
-            foreach (var entry in elementCount)
-            {
-                if (entry.Value > 1)
-                    Console.WriteLine($"{entry.Key}");
-            }
-        }
-
         static void Main(string[] args)
         {
-            int[] arr = { 1, 1, 2, 1, 2, 3, 3 };
-            int n = arr.Length;
-            CountOccurrences(arr, n);
+            int rows = Convert.ToInt32(Console.ReadLine());
+            for (int i = rows; i > 0; i--)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+
             Console.ReadLine();
         }
     }
